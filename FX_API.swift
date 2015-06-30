@@ -32,35 +32,42 @@ class fxRateAPI {
         print(fullURI)
     }
         
-    func getFXRates (){
+    func getFXRates () -> Dictionary<String, Double> {
             
-            
+//        var quotes:Dictionary<String, Double>
+
         Alamofire.request(.GET, fullURI!)
             .responseJSON{ (_, _, JSON, _) in
-                var quotes:[Dictionary<String, Double>] = []
                 let data = JSON as! [String:AnyObject]
+                var quotes = Dictionary<String, Double>()
                 
                 if let quotesData:[String:AnyObject] = data["quotes"] as? [String:AnyObject] {
+                    
+                  
                     for (key, val) in quotesData {
                         let quoteValue = val as! Double
-                        quotes.append([key:quoteValue])
+                        let currencyKeyIndex = advance(3, 3)
+                        println(key[currencyKeyIndex])
+//                        quotes[currency] = quoteValue
                     }
-                    
-                    println(quotes)
                 }
-                
-                print(data)
-                            
-            }
-        /*var endPoint = NSURL(string: fullURI!)
-        var data = NSData(contentsOfURL: endPoint!)
-        println(data)
-        if let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
-            if let items = json["items"] as? NSArray {
-                for item in items {
-                    // construct your model objects
+                println(quotes)
         
-        }*/
+        }
+        
+        return Dictionary<String, Double>()
+    
+//        return quotes
+        
+              /*if let quouteToReturn = quotes {
+                    return quoteToReturn
+                } else {
+                
+                quotes = [["AUDHKD": 5.951326], ["AUDUSD": 0.7677], ["AUDGBP": 0.488276], ["AUDEUR": 0.687423], ["AUDJPY": 93.725433]]
+                
+                return quotes
+                }*/
+                
         
     }
     

@@ -48,6 +48,24 @@ class SelectCurrencyViewController: UITableViewController {
         return tableViewCell
     }
     
+    
+    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        // Toggle between checked/unchecked state
+        // TODO If checked, record favourited colour
+        switch (cell!.accessoryType) {
+        case .Checkmark:
+            cell?.accessoryType = UITableViewCellAccessoryType.None
+            // Add colour
+        default:
+            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+            // Remove colour
+            
+        }
+        
+    }*/
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let FXTableViewController = segue.destinationViewController as? FXTableViewController {
             //var selectedRowIndex = self.tableView.indexPathforSelected()
