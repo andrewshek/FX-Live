@@ -36,9 +36,18 @@ class fxRateAPI {
             
             
         Alamofire.request(.GET, fullURI!)
-            .responseJSON { (_, _, data, _) in
+            .responseJSON{ (_, _, JSON, _) in
+                var quotes:[Dictionary<String, Double>] = []
+                let data = JSON as! [String:AnyObject]
                 
-                //let json = JSON(data!)
+                if let quotesData:[String:AnyObject] = data["quotes"] as? [String:AnyObject] {
+                    for (key, val) in quotesData {
+                        let quoteValue = val as! Double
+                        quotes.append([key:quoteValue])
+                    }
+                    
+                    println(quotes)
+                }
                 
                 print(data)
                             

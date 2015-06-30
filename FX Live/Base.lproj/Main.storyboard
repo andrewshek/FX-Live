@@ -117,16 +117,12 @@
                             <outlet property="delegate" destination="R8q-G8-7Lo" id="ogH-2k-thX"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="MLs-fL-MrX">
-                            <connections>
-                                <segue destination="gct-CZ-jEX" kind="unwind" unwindAction="unwindToFXTableViewControler:sender:" id="QTO-3l-fx5"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="1Xc-2h-Uyz">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="rKb-ZS-nWb"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7U-yr-eUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="gct-CZ-jEX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1673" y="932"/>
         </scene>

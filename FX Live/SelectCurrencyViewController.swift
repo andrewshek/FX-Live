@@ -48,10 +48,12 @@ class SelectCurrencyViewController: UITableViewController {
         return tableViewCell
     }
     
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let FXTableViewController = segue.destinationViewController as? FXTableViewController {
+            //var selectedRowIndex = self.tableView.indexPathforSelected()
+            
             
         }
-    }*/
+    }
     
 }
