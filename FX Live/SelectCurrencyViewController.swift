@@ -12,8 +12,13 @@ import UIKit
 class SelectCurrencyViewController: UITableViewController {
     
     let currency = ["USD", "EUR", "JPY", "HKD", "GBP", "CHF"]
-
+    var currencySelected = [String] ()
+    let fxRate = [1.223, 0.34, 0.78, 0.56, 0.34, 0.89]
     
+    override func viewDidLoad() {
+        
+        
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currency.count
@@ -30,7 +35,11 @@ class SelectCurrencyViewController: UITableViewController {
             else
             {
                 tableViewCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                currencySelected.append("CHF")
+                println(currencySelected)
             }
+            
+
         }
         
     }
@@ -65,12 +74,27 @@ class SelectCurrencyViewController: UITableViewController {
         }
         
     }*/
+ 
+    @IBAction func Add(segue: UIStoryboardSegue) {
+        
+        if let FXTableViewController = segue.destinationViewController as? FXTableViewController {
+            FXTableViewController.fxRate = []
+            FXTableViewController.currency = []
+            
+            FXTableViewController.fxRate = fxRate
+            FXTableViewController.currency = currencySelected
+        }
+        
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let FXTableViewController = segue.destinationViewController as? FXTableViewController {
-            //var selectedRowIndex = self.tableView.indexPathforSelected()
+          /*  FXTableViewController.fxRate = []
+            FXTableViewController.currency = []
             
-            
+            FXTableViewController.fxRate = fxRate
+            FXTableViewController.currency = currencySelected*/
         }
     }
     

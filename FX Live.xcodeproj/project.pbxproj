@@ -26,6 +26,8 @@
 		498C16E51B299528000356B6 /* FXTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C16E41B299528000356B6 /* FXTableViewCell.swift */; };
 		49CF82A21B396E3D000E5363 /* SelectCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF82A11B396E3D000E5363 /* SelectCurrencyViewController.swift */; };
 		49CF82A41B3970EA000E5363 /* SelectCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF82A31B3970EA000E5363 /* SelectCurrencyCell.swift */; };
+		49FE55A21B43F82F00ED44A5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE55A11B43F82F00ED44A5 /* DataManager.swift */; };
+		49FE55A41B4400E300ED44A5 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE55A31B4400E300ED44A5 /* test.swift */; };
 		B534FEE53E7ACC42F81A2FD7 /* Pods_FX_Live.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E65B1E95AA8EEA6E1787578 /* Pods_FX_Live.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		498C16E41B299528000356B6 /* FXTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXTableViewCell.swift; sourceTree = "<group>"; };
 		49CF82A11B396E3D000E5363 /* SelectCurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCurrencyViewController.swift; sourceTree = "<group>"; };
 		49CF82A31B3970EA000E5363 /* SelectCurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCurrencyCell.swift; sourceTree = "<group>"; };
+		49FE55A11B43F82F00ED44A5 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		49FE55A31B4400E300ED44A5 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		D87589FE91C7A80EB25DD89E /* Pods-FX Live.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FX Live.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FX Live/Pods-FX Live.debug.xcconfig"; sourceTree = "<group>"; };
 		EC5008D4C60171D584F01085 /* Pods-FX Live.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FX Live.release.xcconfig"; path = "Pods/Target Support Files/Pods-FX Live/Pods-FX Live.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +170,8 @@
 			children = (
 				490030CE1B26F5910043CF70 /* Products */,
 				4951C0D01B301DF500545CEA /* FX_API.swift */,
+				49FE55A11B43F82F00ED44A5 /* DataManager.swift */,
+				49FE55A31B4400E300ED44A5 /* test.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -353,10 +359,12 @@
 				4951C0D11B301DF500545CEA /* FX_API.swift in Sources */,
 				498C16E51B299528000356B6 /* FXTableViewCell.swift in Sources */,
 				490030D81B26F5910043CF70 /* ViewController.swift in Sources */,
+				49FE55A41B4400E300ED44A5 /* test.swift in Sources */,
 				490030D31B26F5910043CF70 /* AppDelegate.swift in Sources */,
 				49CF82A21B396E3D000E5363 /* SelectCurrencyViewController.swift in Sources */,
 				490030D61B26F5910043CF70 /* FX_Live.xcdatamodeld in Sources */,
 				49CF82A41B3970EA000E5363 /* SelectCurrencyCell.swift in Sources */,
+				49FE55A21B43F82F00ED44A5 /* DataManager.swift in Sources */,
 				490030F61B297E940043CF70 /* FXTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

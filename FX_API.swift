@@ -20,6 +20,7 @@ class fxRateAPI {
     var fullURI:String?
     var baseCurrency:String?
     
+    
     init(currencies:[String], baseCurrency:String){
         
         var currencies = convertCurrenicesToString(currencies)
@@ -29,10 +30,12 @@ class fxRateAPI {
             fullURI = URI + accessKey + "&currencies=" + tempCurrencies + "&source=" + baseCurrency + "&format=1"
             
             }
-        print(fullURI)
+        
     }
+    
         
     func getFXRates () -> Dictionary<String, Double> {
+    
             
 //        var quotes:Dictionary<String, Double>
 
@@ -47,7 +50,7 @@ class fxRateAPI {
                     for (key, val) in quotesData {
                         let quoteValue = val as! Double
                         let currencyKeyIndex = advance(3, 3)
-                        println(key[currencyKeyIndex])
+                        //println(key[currencyKeyIndex])
 //                        quotes[currency] = quoteValue
                     }
                 }

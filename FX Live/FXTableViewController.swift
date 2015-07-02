@@ -14,8 +14,9 @@ import UIKit
 
 class FXTableViewController: UITableViewController {
 
-let currency = ["USD", "EUR", "JPY", "HKD", "GBP"]
-let fxRate = [1.223, 0.34, 0.78, 0.56, 0.34]
+var currency = ["USD", "EUR", "JPY", "HKD", "GBP"]
+//var fxRate = [0.00, 0.00, 0.78, 0.56, 0.34]
+    var fxRate = [0.00, 0.00, 0.00, 0.00, 0.00]
 //let tempfxRate = ["1.223", "0.34", "0.78", "0.56", "0.34"]
 var fxRates: fxRateAPI!
 //var rates : [Dictionary<String, Double>]
@@ -24,10 +25,35 @@ var testCurrency: Dictionary<String, Double>?
     
     override func viewDidLoad() {
         
-        fxRates = fxRateAPI(currencies: currency, baseCurrency:"AUD")
-        fxRates.getFXRates()
+        //fxRates = fxRateAPI(currencies: currency, baseCurrency:"AUD")
+        //fxRates.getFXRates()
+        DiggDataManager.sharedInstance.fetchAllWithNativeJSON { (result, error) -> Void in
+        println(result)
+            self.updateFXRate(result)
+        }
         
     }
+    
+    func updateFXRate(Rates: Dictionary<String, Double>){
+        
+        fxRate = []
+        
+        for cur in currency {
+            
+            var individualRate: Double? = Rates[cur]
+            fxRate.append(individualRate!)
+            
+        }
+            
+        
+    tableView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+    }
+    
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currency.count
@@ -38,9 +64,6 @@ var testCurrency: Dictionary<String, Double>?
         
         testCurrency = ["HKD": 5.951326, "USD": 0.7677, "GBP": 0.488276, "EUR": 0.687423, "JPY": 93.725433]
 
-        var dictionaryTest = testCurrency
-        
-//        testCurrencyTwo = 
         
         var cell = tableView.dequeueReusableCellWithIdentifier("FXCell") as! FXTableViewCell
         
@@ -61,17 +84,22 @@ var testCurrency: Dictionary<String, Double>?
         return cell
     }
     
-    @IBAction func unwindToFXTableViewControler(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let kittensFilterViewController = segue.sourceViewController as? SelectCurrencyViewController{
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let FXTableViewController = segue.destinationViewController as? SelectCurrencyViewController {
+            FXTableViewController.currencySelected = currency
             
             
         }
     }
     
-}
+    @IBAction func unwindToFXTableViewControler(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+   
+     
+    }
 
     
-    
+}
 
 
 
